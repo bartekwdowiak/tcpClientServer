@@ -19,7 +19,7 @@ void main(){
     serverAddr.sin_port=htons(PORT);
     serverAddr.sin_addr.s_addr=inet_addr("127.0.0.1");
 
-    connect(clientSocket, (struct sockaddr*)&serveraddr, sizeof(serverAddr));
+    connect(clientSocket, (struct sockaddr*)&serverAddr, sizeof(serverAddr));
 
     recv(clientSocket, buffer, 1024, 0);
     printf("Data reveived: %s\n", buffer);
