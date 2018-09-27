@@ -27,5 +27,5 @@ void main(){
 
     recv(clientSocket, buffer, 1024, 0);
     printf("[+]Data reveived: %s\n", buffer);
-
+    printf("[+]Closing the conection\n");
 }

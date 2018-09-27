@@ -39,4 +39,6 @@ void main(){
 
     strcpy(buffer, "Hello from tcpServer!!!");
     send(newSocket, buffer, strlen(buffer), 0);
+    printf("[+]Sent the data to the Client\n");
+    printf("[+]Closing the conection\n");
 }
