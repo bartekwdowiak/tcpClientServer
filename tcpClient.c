@@ -12,16 +12,20 @@ void main(){
     int clientSocket;
     struct sockaddr_in serverAddr;
     char buffer[1024];
+    memset(&buffer, '\0', sizeof(buffer));
 
     clientSocket=socket(PF_INET, SOCK_STREAM, 0);
+    printf("[+]Client Socket Created Sucessfully\n");
     memset(&serverAddr, '\0', sizeof(serverAddr));
+
     serverAddr.sin_family=AF_INET;
     serverAddr.sin_port=htons(PORT);
     serverAddr.sin_addr.s_addr=inet_addr("127.0.0.1");
 
     connect(clientSocket, (struct sockaddr*)&serverAddr, sizeof(serverAddr));
+    printf("[+]Connected to the Server\n");
 
     recv(clientSocket, buffer, 1024, 0);
-    printf("Data reveived: %s\n", buffer);
+    printf("[+]Data reveived: %s\n", buffer);
 
 }
